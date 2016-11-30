@@ -2,7 +2,7 @@
 //  SlideshowApp2Tests.swift
 //  SlideshowApp2Tests
 //
-//  Created by 村 英敏 on 2016/11/19.
+//  Created by hidetoshi-m on 2016/11/19.
 //  Copyright © 2016年 hidetoshi-m. All rights reserved.
 //
 

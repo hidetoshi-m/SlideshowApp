@@ -34,11 +34,24 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         // segueから遷移先のResultViewControllerを取得する
         let ExpandViewController:ExpandViewController = segue.destination as! ExpandViewController
 
-        // 遷移先のResultViewControllerで宣言しているx, yに値を代入して渡す
+        // 遷移先のResultViewControllerで宣言してい変数に値を代入して渡す
         ExpandViewController.photonum = globalVariableforwardInt
+        
+        //スライドショーがオン状態のときはスライドショーを止める
+        if globalVariableSlideshowFlag == true {
+            
+            //フラグをOFFに、進む・戻るボタンの有効化・タイマー無効
+            globalVariableSlideshowFlag = false
+            BtnMODORU.isEnabled = true
+            btnSUSUMU.isEnabled = true
+            BtnSAISEITEISHI.setTitle("再生", for:.normal)
+            timer?.invalidate()
+        }
+
         
         // 写真Viewerに画像データを渡す
         if let photoViewCtrl: ExpandViewController = segue.destination as? ExpandViewController {
